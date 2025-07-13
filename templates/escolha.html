@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Escolhas</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h2>{{ cena.texto }}</h2>
+  <form method="post">
+    {% for key, escolha in cena.escolhas.items() %}
+      <button type="submit" name="escolha" value="{{ key }}">{{ escolha.texto }}</button><br><br>
+    {% endfor %}
+  </form>
+<div style="margin-bottom: 20px;">
+  <p><strong>Ética:</strong> {{ etica }}</p>
+  <p><strong>Direitos Digitais:</strong> {{ impacto.direitos_digitais }}</p>
+  <p><strong>Segurança Pública:</strong> {{ impacto.seguranca_publica }}</p>
+  <p><strong>Confiança Comunitária:</strong> {{ impacto.confianca_comunitaria }}</p>
+</div>
+{% if mensagem_final %}
+  <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; background-color: #222;">
+    <h3>Resumo do impacto das suas decisões:</h3>
+    <p>{{ mensagem_final }}</p>
+  </div>
+
+  {% if decisoes %}
+    <div style="margin-top: 30px;">
+      <h3>Jornada do Jogador:</h3>
+      <ul>
+        {% for d in decisoes %}
+          <li><strong>{{ d.cena }}</strong>: {{ d.texto }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+{
+  "inicio": {
+    "texto": "Você é César, analista de cibersegurança do DCCC. Escolha seu perfil ético.",
+    "escolhas": {
+      "pragmatico": {"texto": "Pragmático", "proximo": "cap1_1", "etica": -1},
+      "idealista": {"texto": "Idealista", "proximo": "cap1_1", "etica": 1},
+      "equilibrado": {"texto": "Equilibrado", "proximo": "cap1_1", "etica": 0}
+    }
+  },
+  "cap1_1": {
+    "texto": "Reunião com Maya e Samuel sobre o caso Nuevo Camino. Samuel explica que o grupo agora está envolvido com crimes cibernéticos.",
+    "escolhas": {
+      "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cap1_2"},
+      "b": {"texto": "Que tipo de apoio técnico vocês precisam?", "proximo": "cap1_2"},
+      "c": {"texto": "Temos evidências suficientes para uma investigação?", "proximo": "cap1_2"}
+    }
+  },
+  "cap1_2": {
+    "texto": "Samuel pede para invadir os sistemas do grupo. Maya te nomeia líder da investigação.",
+    "escolhas": {
+      "a": {
+        "texto": "Isso levanta questões éticas importantes...", 
+        "proximo": "cap2_intro", 
+        "etica": 1,
+        "impacto": {
+          "direitos_digitais": 2,
+          "confianca_comunitaria": 1
+        }
+      },
+      "b": {
+        "texto": "Vamos analisar a viabilidade técnica primeiro", 
+        "proximo": "cap2_intro", 
+        "etica": 0,
+        "impacto": {
+          "seguranca_publica": 1,
+          "direitos_digitais": 1
+        }
+      },
+      "c": {
+        "texto": "Se é para prender criminosos, faremos o necessário", 
+        "proximo": "cap2_intro", 
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 2,
+          "direitos_digitais": -1
+        }
+      }
+    }
+  },
+  "cap2_intro": {
+    "texto": "Você acessa a interface do sistema investigativo. Seu objetivo é descobrir o meio de comunicação do grupo. Há arquivos disponíveis para análise.",
+    "escolhas": {
+      "a": {"texto": "Ler 'Nuevo_Camino_Perfil.pdf'", "proximo": "cap2_msg"},
+      "b": {"texto": "Ver 'Interceptacoes_Comunicacao.txt'", "proximo": "cap2_msg"},
+      "c": {"texto": "Abrir 'Analise_Financeira.xlsx'", "proximo": "cap2_msg"},
+      "d": {"texto": "Ler 'Relatorio_Comunidades.pdf'", "proximo": "cap2_msg"}
+    }
+  },
+  "cap2_msg": {
+    "texto": "Você encontra padrões nas mensagens e descobre o app MAMI, um mensageiro criptografado usado por indígenas e criminosos.",
+    "escolhas": {
+      "continuar": {"texto": "Investigar o criador do MAMI", "proximo": "cap3_1"}
+    }
+  },
+  "cap3_1": {
+    "texto": "Você contata Iberê Silva, o desenvolvedor do MAMI. Ele se recusa a colaborar por princípios éticos.",
+    "escolhas": {
+      "a": {
+        "texto": "É uma questão de segurança nacional", 
+        "proximo": "cap3_2", 
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 2,
+          "direitos_digitais": -2,
+          "confianca_comunitaria": -1
+        }
+      },
+      "b": {
+        "texto": "Podemos trabalhar juntos numa solução ética", 
+        "proximo": "cap3_2", 
+        "etica": 1,
+        "impacto": {
+          "direitos_digitais": 2,
+          "confianca_comunitaria": 2
+        }
+      }
+    }
+  },
+  "cap3_2": {
+    "texto": "Iberê revela que o app MAMI protege comunidades indígenas. Sua colaboração pode prejudicar inocentes.",
+    "escolhas": {
+      "a": {
+        "texto": "Garantimos uso limitado e supervisionado", 
+        "proximo": "rota_ética", 
+        "etica": 1,
+        "impacto": {
+          "direitos_digitais": 2,
+          "seguranca_publica": 1
+        }
+      },
+      "b": {
+        "texto": "Vamos agir com ou sem você", 
+        "proximo": "rota_bruta", 
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 3,
+          "direitos_digitais": -3,
+          "confianca_comunitaria": -2
+        }
+      },
+      "c": {
+        "texto": "Talvez haja outro caminho...", 
+        "proximo": "rota_social", 
+        "etica": 0,
+        "impacto": {
+          "seguranca_publica": 1,
+          "confianca_comunitaria": 1
+        }
+      }
+    }
+  },
+  "rota_ética": {
+    "texto": "Você e Iberê colaboram em um sistema de filtros que detecta apenas padrões criminosos.",
+    "escolhas": {
+      "a": {
+        "texto": "Configurar o sistema de maneira equilibrada", 
+        "proximo": "final"
+      }
+    }
+  },
+  "rota_bruta": {
+    "texto": "A PF executa um ataque direto à criptografia com um mandado judicial.",
+    "escolhas": {
+      "a": {
+        "texto": "Executar a operação", 
+        "proximo": "final"
+      }
+    }
+  },
+  "rota_social": {
+    "texto": "Você propõe uma infiltração na rede através de engenharia social e criação de uma identidade digital falsa.",
+    "escolhas": {
+      "a": {
+        "texto": "Criar persona e iniciar infiltração", 
+        "proximo": "final"
+      }
+    }
+  },
+  "final": {
+    "texto": "Aqui está o resumo das suas escolhas e o impacto delas:",
+    "escolhas": {}
+  }
+}
