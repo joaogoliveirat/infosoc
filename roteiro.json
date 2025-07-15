@@ -1,18 +1,18 @@
 {
   "prologo": {
     "dialogo": [
-      {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:"}
+      {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:", "imagem": ""}
     ],
     "escolhas": {
-      "pragmatico": {"texto": "Pragmático: Foca em resultados, menos preocupado com métodos.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Pragmático"}},
-      "idealista": {"texto": "Idealista: Prioriza princípios éticos e direitos digitais.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Idealista"}},
-      "equilibrado": {"texto": "Equilibrado: Tenta balancear eficácia e ética.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Equilibrado"}}
+      "pragmatico": {"texto": "Pragmático...", "proximo": "cena_1_1"},
+      "idealista": {"texto": "Idealista...", "proximo": "cena_1_1"},
+      "equilibrado": {"texto": "Equilibrado...", "proximo": "cena_1_1"}
     }
   },
   "cena_1_1": {
     "dialogo": [
-      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'."},
-      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos, intimidam comunidades indígenas online e usam criptomoedas."}
+      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'.", "imagem": "maya.png"},
+      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos...", "imagem": "samuel.png"}
     ],
     "escolhas": {
       "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cena_1_2"},
@@ -22,47 +22,121 @@
   },
   "cena_1_2": {
     "dialogo": [
-      {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. A qualquer custo."},
-      {"personagem": "Maya Santos", "fala": "César, você liderará essa operação. Como responde?"}
+      {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. A qualquer custo.", "imagem": "samuel.png"},
+      {"personagem": "Maya Santos", "fala": "César, você liderará essa operação. Como responde?", "imagem": "maya.png"}
     ],
     "escolhas": {
-      "a": {"texto": "'Isso levanta questões éticas importantes...'", "proximo": "investigacao_inicio", "pontuacao": {"idealista": 2}, "impacto": {"direitos_digitais": 2, "confianca_comunitaria": 1}},
-      "b": {"texto": "'Vamos analisar a viabilidade técnica primeiro.'", "proximo": "investigacao_inicio", "pontuacao": {"equilibrado": 2}, "impacto": {"seguranca_publica": 1, "direitos_digitais": 1}},
-      "c": {"texto": "'Se é para prender criminosos, faremos o necessário.'", "proximo": "investigacao_inicio", "pontuacao": {"pragmatico": 2}, "impacto": {"seguranca_publica": 2, "direitos_digitais": -1}}
+      "a": {
+        "texto": "Isso levanta questões éticas importantes...", 
+        "proximo": "cena_2_1", 
+        "etica": 1,
+        "impacto": {
+          "direitos_digitais": 2,
+          "confianca_comunitaria": 1
+        }
+      },
+      "b": {
+        "texto": "Vamos analisar a viabilidade técnica primeiro", 
+        "proximo": "cena_2_1", 
+        "etica": 0,
+        "impacto": {
+          "seguranca_publica": 1,
+          "direitos_digitais": 1
+        }
+      },
+      "c": {
+        "texto": "Se é para prender criminosos, faremos o necessário", 
+        "proximo": "cena_2_1", 
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 2,
+          "direitos_digitais": -1
+        }
+      }
     }
   },
-  "investigacao_inicio": {
+  "cena_2_1": {
     "dialogo": [
-      {"personagem": "Narrador", "fala": "CAPÍTULO 2 - INVESTIGAÇÃO DIGITAL. Você está em sua interface de investigação. O objetivo é descobrir o meio de comunicação do grupo. Você analisa os arquivos da PF: um perfil da organização, fragmentos de mensagens, análises financeiras e um relatório sobre o impacto nas comunidades."}
+      {"personagem": "Narrador", "fala": "CAPÍTULO 2 - INVESTIGAÇÃO DIGITAL.  Você acessa a interface do sistema investigativo. Seu objetivo é descobrir o meio de comunicação do grupo. Há arquivos disponíveis para análise.", "imagem": ""}
     ],
     "escolhas": {
-      "continuar": {"texto": "Iniciar análise dos padrões de comunicação", "proximo": "puzzle_1_resultado"}
+      "a": {"texto": "Ler 'Nuevo_Camino_Perfil.pdf'", "proximo": "cena_2_file1"},
+      "b": {"texto": "Ver 'Interceptacoes_Comunicacao.txt'", "proximo": "cena_2_file2"},
+      "c": {"texto": "Abrir 'Analise_Financeira.xlsx'", "proximo": "cena_2_file3"},
+      "d": {"texto": "Ler 'Relatorio_Comunidades.pdf'", "proximo": "cena_2_file4"}
     }
   },
-  "puzzle_1_resultado": {
+  "cena_2_file1": {
     "dialogo": [
-        {"personagem": "César (Pensamento)", "fala": "Interessante... Após cruzar as informações, encontrei o padrão. Eles usam um aplicativo de mensagens criptografado chamado 'MAMI'."},
-        {"personagem": "César (Pensamento)", "fala": "Crucialmente, o MAMI é o mesmo app usado por ativistas e pelas próprias comunidades indígenas para se protegerem. Preciso encontrar o desenvolvedor."}
+      {"personagem": "Narrador", "fala": "Você acessa o arquivo Nuevo_Camino_Perfil.pdf.", "imagem": ""}
+    ], 
+    "escolhas": {
+      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
+      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+    }
+  },
+  "cena_2_file2": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você acessa o arquivo Interceptacoes_Comunicacao.txt.", "imagem": ""}
+    ], 
+    "escolhas": {
+      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
+      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+    }
+  },
+  "cena_2_file3": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você acessa o arquivo Analise_Financeira.xlsx.", "imagem": ""}
+    ], 
+    "escolhas": {
+      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
+      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+    }
+  },
+    "cena_2_file4": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você acessa o arquivo Relatorio_Comunidades.pdf.", "imagem": ""}
+    ], 
+    "escolhas": {
+      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
+      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+    }
+  },
+  "cena_2_2": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você encontra padrões nas mensagens e descobre o app MAMI, um mensageiro criptografado usado por indígenas e criminosos.", "imagem": ""}
     ],
     "escolhas": {
-      "continuar": {"texto": "Localizar o desenvolvedor do MAMI", "proximo": "cena_3_1"}
+      "continuar": {"texto": "Investigar o criador do MAMI", "proximo": "cena_3_1"}
     }
   },
   "cena_3_1": {
     "dialogo": [
       {"personagem": "Narrador", "fala": "CAPÍTULO 3 - O DESENVOLVEDOR. Você localiza Iberê Silva, o criador do MAMI."},
-      {"personagem": "César", "fala": "Iberê, sou do DCCC. Precisamos da sua cooperação em um caso de segurança nacional envolvendo o MAMI."},
-      {"personagem": "Iberê Silva", "fala": "O MAMI foi criado para proteger da vigilância, não para criar novas portas para ela. Não posso criar uma fraqueza no sistema."}
+      {"personagem": "César", "fala": "Iberê, sou do DCCC. Precisamos da sua cooperação em um caso de segurança nacional envolvendo o MAMI.", "imagem": "cesar.png"},
+      {"personagem": "Iberê Silva", "fala": "O MAMI foi criado para proteger da vigilância, não para criar novas portas para ela. Não posso criar uma fraqueza no sistema.", "imagem": "ibere.png"}
     ],
     "escolhas": {
-      "a": {"texto": "'É uma questão de segurança nacional.' (Pressão oficial)", "proximo": "cena_3_2_dilema", "pontuacao": {"pragmatico": 1}},
-      "b": {"texto": "'Podemos trabalhar juntos numa solução ética.' (Colaboração)", "proximo": "cena_3_2_dilema", "pontuacao": {"idealista": 1}, "set_estado": {"caminho_secreto": 1}},
-      "c": {"texto": "'Vou conseguir acesso com ou sem sua ajuda.' (Ameaça)", "proximo": "cena_3_2_dilema", "pontuacao": {"pragmatico": 2, "idealista": -1}}
+      "a": {"texto": "'É uma questão de segurança nacional.'", "proximo": "cena_3_2_dilema",
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 2,
+          "direitos_digitais": -2,
+          "confianca_comunitaria": -1
+        }
+      },
+      "b": {"texto": "'Podemos trabalhar juntos numa solução ética.'", "proximo": "cena_3_2_dilema",
+        "etica": 1,
+        "impacto": {
+          "direitos_digitais": 2,
+          "confianca_comunitaria": 2
+        }
+      }
     }
   },
   "cena_3_2_dilema": {
     "dialogo": [
-      {"personagem": "Iberê Silva", "fala": "Você não entende. Se eu ceder um backdoor, não estarei traindo apenas criminosos. Estarei expondo ativistas e comunidades indígenas que usam o MAMI para documentar violações de direitos. A vulnerabilidade afetaria a todos."}
+      {"personagem": "Iberê Silva", "fala": "Você não entende. Se eu ceder um backdoor, não estarei traindo apenas criminosos. Estarei expondo ativistas e comunidades indígenas que usam o MAMI para documentar violações de direitos. A vulnerabilidade afetaria a todos.", "imagem": "ibere.png"}
     ],
     "escolhas": {
       "a": {"texto": "Colaborar com Iberê para criar filtros éticos.", "proximo": "rota_a_intro", "impacto": {"direitos_digitais": 2, "seguranca_publica": 1, "confianca_comunitaria": 2}, "set_estado": {"caminho_secreto": 2}},
@@ -72,24 +146,24 @@
   },
   "rota_a_intro": {
     "dialogo": [
-      {"personagem": "Iberê Silva", "fala": "Ok... eu posso ajudar. Vamos criar um sistema que monitora apenas padrões de metadados criminosos, sem violar o conteúdo das mensagens de usuários inocentes. Mas saiba que é uma solução técnica complexa e demorada."}
+      {"personagem": "Iberê Silva", "fala": "Ok... eu posso ajudar. Vamos criar um sistema que monitora apenas padrões de metadados criminosos, sem violar o conteúdo das mensagens de usuários inocentes. Mas saiba que é uma solução técnica complexa e demorada.", "imagem": "ibere.png"}
     ],
     "escolhas": {"continuar": {"texto": "Implementar os filtros e observar os resultados", "proximo": "verificar_final_secreto"}}
   },
   "rota_b_intro": {
     "dialogo": [
-        {"personagem": "Narrador", "fala": "Com um mandado judicial, sua equipe quebra a criptografia do MAMI. Vocês obtêm acesso irrestrito a todas as comunicações, de todos os usuários. A operação contra o Nuevo Camino pode começar."}
+        {"personagem": "Narrador", "fala": "Com um mandado judicial, sua equipe quebra a criptografia do MAMI. Vocês obtêm acesso irrestrito a todas as comunicações, de todos os usuários. A operação contra o Nuevo Camino pode começar.", "imagem": ""}
     ],
     "escolhas": {"continuar": {"texto": "Iniciar a análise dos dados expostos", "proximo": "final_b"}}
   },
   "rota_c_intro": {
     "dialogo": [
-        {"personagem": "César (Pensamento)", "fala": "É um risco enorme, mas é o único jeito de preservar o MAMI. Vou passar as próximas semanas criando uma persona digital para me infiltrar nos círculos do Nuevo Camino e obter as informações de dentro."}
+        {"personagem": "César (Pensamento)", "fala": "É um risco enorme, mas é o único jeito de preservar o MAMI. Vou passar as próximas semanas criando uma persona digital para me infiltrar nos círculos do Nuevo Camino e obter as informações de dentro.", "imagem": "cesar.png"}
     ],
     "escolhas": {"continuar": {"texto": "Aguardar os resultados da infiltração", "proximo": "final_c"}}
   },
   "verificar_final_secreto": {
-    "dialogo": [{"personagem": "Sistema", "fala": "Verificando integridade da colaboração..."}],
+    "dialogo": [{"personagem": "Sistema", "fala": "Verificando integridade da colaboração...", "imagem": ""}],
     "condicional": {"campo": "caminho_secreto", "valor": 2, "proximo_sucesso": "final_d", "proximo_falha": "final_a"},
     "escolhas": {}
   },
