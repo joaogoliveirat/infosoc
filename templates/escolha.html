@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Jogo de Escolhas</title>
-  <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <title>Dilema Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <h2>{{ cena.texto }}</h2>
-  <form method="post">
-    {% for key, escolha in cena.escolhas.items() %}
-      <button type="submit" name="escolha" value="{{ key }}">{{ escolha.texto }}</button><br><br>
-    {% endfor %}
-  </form>
-<div style="margin-bottom: 20px;">
-  <p><strong>Ética:</strong> {{ etica }}</p>
-  <p><strong>Direitos Digitais:</strong> {{ impacto.direitos_digitais }}</p>
-  <p><strong>Segurança Pública:</strong> {{ impacto.seguranca_publica }}</p>
-  <p><strong>Confiança Comunitária:</strong> {{ impacto.confianca_comunitaria }}</p>
-</div>
-{% if mensagem_final %}
-  <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; background-color: #222;">
-    <h3>Resumo do impacto das suas decisões:</h3>
-    <p>{{ mensagem_final }}</p>
-  </div>
+    <div class="container">
+        <h2>Dilema Digital: O Caso Nuevo Camino</h2>
 
-  {% if decisoes %}
-    <div style="margin-top: 30px;">
-      <h3>Jornada do Jogador:</h3>
-      <ul>
-        {% for d in decisoes %}
-          <li><strong>{{ d.cena }}</strong>: {{ d.texto }}</li>
-        {% endfor %}
-      </ul>
+        {% if mensagem_final %}
+            <div class="final">
+                <h3>Fim da Operação</h3>
+                {% for linha in cena.dialogo %}
+                    <p><strong>{{ linha.personagem }}:</strong> {{ linha.fala }}</p>
+                {% endfor %}
+                <p><strong>Análise de Impacto:</strong> {{ resumo_impacto }}</p>
+            </div>
+            <div class="decisoes">
+                <h3>Suas Decisões:</h3>
+                <ul>
+                    {% for decisao in decisoes %}
+                        <li>{{ decisao.texto }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="/" class="restart-button">
+                <button>Jogar Novamente</button>
+            </a>
+
+        {% else %}
+            <div class="dialogo-box">
+                {% for linha in cena.dialogo %}
+                    <p><strong>{{ linha.personagem }}:</strong> {{ linha.fala }}</p>
+                {% endfor %}
+            </div>
+            
+            <form method="POST" action="{{ url_for('cena', cena_id=cena_id) }}">
+                {% for key, val in cena.escolhas.items() %}
+                    <button type="submit" name="escolha" value="{{ key }}">{{ val.texto }}</button>
+                {% endfor %}
+            </form>
+
+            <div class="status">
+                <h3>Status da Missão</h3>
+                <p>Segurança Pública: {{ impacto.seguranca_publica }} | Direitos Digitais: {{ impacto.direitos_digitais }} | Confiança Comunitária: {{ impacto.confianca_comunitaria }}</p>
+                 {% if estado.personalidade_inicial %}
+                    <p>Perfil Ético Inicial: <strong>{{ estado.personalidade_inicial }}</strong></p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
-  {% endif %}
-{% endif %}
-
-
 </body>
 </html>

@@ -1,153 +1,112 @@
 {
-  "inicio": {
-    "texto": "Você é César, analista de cibersegurança do DCCC. Escolha seu perfil ético.",
+  "prologo": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:"}
+    ],
     "escolhas": {
-      "pragmatico": {"texto": "Pragmático", "proximo": "cap1_1", "etica": -1},
-      "idealista": {"texto": "Idealista", "proximo": "cap1_1", "etica": 1},
-      "equilibrado": {"texto": "Equilibrado", "proximo": "cap1_1", "etica": 0}
+      "pragmatico": {"texto": "Pragmático: Foca em resultados, menos preocupado com métodos.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Pragmático"}},
+      "idealista": {"texto": "Idealista: Prioriza princípios éticos e direitos digitais.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Idealista"}},
+      "equilibrado": {"texto": "Equilibrado: Tenta balancear eficácia e ética.", "proximo": "cena_1_1", "set_estado": {"personalidade_inicial": "Equilibrado"}}
     }
   },
-  "cap1_1": {
-    "texto": "Reunião com Maya e Samuel sobre o caso Nuevo Camino. Samuel explica que o grupo agora está envolvido com crimes cibernéticos.",
+  "cena_1_1": {
+    "dialogo": [
+      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'."},
+      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos, intimidam comunidades indígenas online e usam criptomoedas."}
+    ],
     "escolhas": {
-      "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cap1_2"},
-      "b": {"texto": "Que tipo de apoio técnico vocês precisam?", "proximo": "cap1_2"},
-      "c": {"texto": "Temos evidências suficientes para uma investigação?", "proximo": "cap1_2"}
+      "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cena_1_2"},
+      "b": {"texto": "Que tipo de apoio técnico vocês precisam?", "proximo": "cena_1_2"},
+      "c": {"texto": "Temos evidências suficientes para uma investigação?", "proximo": "cena_1_2"}
     }
   },
-  "cap1_2": {
-    "texto": "Samuel pede para invadir os sistemas do grupo. Maya te nomeia líder da investigação.",
+  "cena_1_2": {
+    "dialogo": [
+      {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. A qualquer custo."},
+      {"personagem": "Maya Santos", "fala": "César, você liderará essa operação. Como responde?"}
+    ],
     "escolhas": {
-      "a": {
-        "texto": "Isso levanta questões éticas importantes...", 
-        "proximo": "cap2_intro", 
-        "etica": 1,
-        "impacto": {
-          "direitos_digitais": 2,
-          "confianca_comunitaria": 1
-        }
-      },
-      "b": {
-        "texto": "Vamos analisar a viabilidade técnica primeiro", 
-        "proximo": "cap2_intro", 
-        "etica": 0,
-        "impacto": {
-          "seguranca_publica": 1,
-          "direitos_digitais": 1
-        }
-      },
-      "c": {
-        "texto": "Se é para prender criminosos, faremos o necessário", 
-        "proximo": "cap2_intro", 
-        "etica": -1,
-        "impacto": {
-          "seguranca_publica": 2,
-          "direitos_digitais": -1
-        }
-      }
+      "a": {"texto": "'Isso levanta questões éticas importantes...'", "proximo": "investigacao_inicio", "pontuacao": {"idealista": 2}, "impacto": {"direitos_digitais": 2, "confianca_comunitaria": 1}},
+      "b": {"texto": "'Vamos analisar a viabilidade técnica primeiro.'", "proximo": "investigacao_inicio", "pontuacao": {"equilibrado": 2}, "impacto": {"seguranca_publica": 1, "direitos_digitais": 1}},
+      "c": {"texto": "'Se é para prender criminosos, faremos o necessário.'", "proximo": "investigacao_inicio", "pontuacao": {"pragmatico": 2}, "impacto": {"seguranca_publica": 2, "direitos_digitais": -1}}
     }
   },
-  "cap2_intro": {
-    "texto": "Você acessa a interface do sistema investigativo. Seu objetivo é descobrir o meio de comunicação do grupo. Há arquivos disponíveis para análise.",
+  "investigacao_inicio": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "CAPÍTULO 2 - INVESTIGAÇÃO DIGITAL. Você está em sua interface de investigação. O objetivo é descobrir o meio de comunicação do grupo. Você analisa os arquivos da PF: um perfil da organização, fragmentos de mensagens, análises financeiras e um relatório sobre o impacto nas comunidades."}
+    ],
     "escolhas": {
-      "a": {"texto": "Ler 'Nuevo_Camino_Perfil.pdf'", "proximo": "cap2_msg"},
-      "b": {"texto": "Ver 'Interceptacoes_Comunicacao.txt'", "proximo": "cap2_msg"},
-      "c": {"texto": "Abrir 'Analise_Financeira.xlsx'", "proximo": "cap2_msg"},
-      "d": {"texto": "Ler 'Relatorio_Comunidades.pdf'", "proximo": "cap2_msg"}
+      "continuar": {"texto": "Iniciar análise dos padrões de comunicação", "proximo": "puzzle_1_resultado"}
     }
   },
-  "cap2_msg": {
-    "texto": "Você encontra padrões nas mensagens e descobre o app MAMI, um mensageiro criptografado usado por indígenas e criminosos.",
+  "puzzle_1_resultado": {
+    "dialogo": [
+        {"personagem": "César (Pensamento)", "fala": "Interessante... Após cruzar as informações, encontrei o padrão. Eles usam um aplicativo de mensagens criptografado chamado 'MAMI'."},
+        {"personagem": "César (Pensamento)", "fala": "Crucialmente, o MAMI é o mesmo app usado por ativistas e pelas próprias comunidades indígenas para se protegerem. Preciso encontrar o desenvolvedor."}
+    ],
     "escolhas": {
-      "continuar": {"texto": "Investigar o criador do MAMI", "proximo": "cap3_1"}
+      "continuar": {"texto": "Localizar o desenvolvedor do MAMI", "proximo": "cena_3_1"}
     }
   },
-  "cap3_1": {
-    "texto": "Você contata Iberê Silva, o desenvolvedor do MAMI. Ele se recusa a colaborar por princípios éticos.",
+  "cena_3_1": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "CAPÍTULO 3 - O DESENVOLVEDOR. Você localiza Iberê Silva, o criador do MAMI."},
+      {"personagem": "César", "fala": "Iberê, sou do DCCC. Precisamos da sua cooperação em um caso de segurança nacional envolvendo o MAMI."},
+      {"personagem": "Iberê Silva", "fala": "O MAMI foi criado para proteger da vigilância, não para criar novas portas para ela. Não posso criar uma fraqueza no sistema."}
+    ],
     "escolhas": {
-      "a": {
-        "texto": "É uma questão de segurança nacional", 
-        "proximo": "cap3_2", 
-        "etica": -1,
-        "impacto": {
-          "seguranca_publica": 2,
-          "direitos_digitais": -2,
-          "confianca_comunitaria": -1
-        }
-      },
-      "b": {
-        "texto": "Podemos trabalhar juntos numa solução ética", 
-        "proximo": "cap3_2", 
-        "etica": 1,
-        "impacto": {
-          "direitos_digitais": 2,
-          "confianca_comunitaria": 2
-        }
-      }
+      "a": {"texto": "'É uma questão de segurança nacional.' (Pressão oficial)", "proximo": "cena_3_2_dilema", "pontuacao": {"pragmatico": 1}},
+      "b": {"texto": "'Podemos trabalhar juntos numa solução ética.' (Colaboração)", "proximo": "cena_3_2_dilema", "pontuacao": {"idealista": 1}, "set_estado": {"caminho_secreto": 1}},
+      "c": {"texto": "'Vou conseguir acesso com ou sem sua ajuda.' (Ameaça)", "proximo": "cena_3_2_dilema", "pontuacao": {"pragmatico": 2, "idealista": -1}}
     }
   },
-  "cap3_2": {
-    "texto": "Iberê revela que o app MAMI protege comunidades indígenas. Sua colaboração pode prejudicar inocentes.",
+  "cena_3_2_dilema": {
+    "dialogo": [
+      {"personagem": "Iberê Silva", "fala": "Você não entende. Se eu ceder um backdoor, não estarei traindo apenas criminosos. Estarei expondo ativistas e comunidades indígenas que usam o MAMI para documentar violações de direitos. A vulnerabilidade afetaria a todos."}
+    ],
     "escolhas": {
-      "a": {
-        "texto": "Garantimos uso limitado e supervisionado", 
-        "proximo": "rota_ética", 
-        "etica": 1,
-        "impacto": {
-          "direitos_digitais": 2,
-          "seguranca_publica": 1
-        }
-      },
-      "b": {
-        "texto": "Vamos agir com ou sem você", 
-        "proximo": "rota_bruta", 
-        "etica": -1,
-        "impacto": {
-          "seguranca_publica": 3,
-          "direitos_digitais": -3,
-          "confianca_comunitaria": -2
-        }
-      },
-      "c": {
-        "texto": "Talvez haja outro caminho...", 
-        "proximo": "rota_social", 
-        "etica": 0,
-        "impacto": {
-          "seguranca_publica": 1,
-          "confianca_comunitaria": 1
-        }
-      }
+      "a": {"texto": "Colaborar com Iberê para criar filtros éticos.", "proximo": "rota_a_intro", "impacto": {"direitos_digitais": 2, "seguranca_publica": 1, "confianca_comunitaria": 2}, "set_estado": {"caminho_secreto": 2}},
+      "b": {"texto": "Ignorar o apelo e usar a força da lei para quebrar a criptografia.", "proximo": "rota_b_intro", "impacto": {"seguranca_publica": 3, "direitos_digitais": -3, "confianca_comunitaria": -2}},
+      "c": {"texto": "Tentar uma infiltração social na organização, sem mexer no app.", "proximo": "rota_c_intro", "impacto": {"seguranca_publica": -1, "direitos_digitais": 1, "confianca_comunitaria": 1}}
     }
   },
-  "rota_ética": {
-    "texto": "Você e Iberê colaboram em um sistema de filtros que detecta apenas padrões criminosos.",
-    "escolhas": {
-      "a": {
-        "texto": "Configurar o sistema de maneira equilibrada", 
-        "proximo": "final"
-      }
-    }
+  "rota_a_intro": {
+    "dialogo": [
+      {"personagem": "Iberê Silva", "fala": "Ok... eu posso ajudar. Vamos criar um sistema que monitora apenas padrões de metadados criminosos, sem violar o conteúdo das mensagens de usuários inocentes. Mas saiba que é uma solução técnica complexa e demorada."}
+    ],
+    "escolhas": {"continuar": {"texto": "Implementar os filtros e observar os resultados", "proximo": "verificar_final_secreto"}}
   },
-  "rota_bruta": {
-    "texto": "A PF executa um ataque direto à criptografia com um mandado judicial.",
-    "escolhas": {
-      "a": {
-        "texto": "Executar a operação", 
-        "proximo": "final"
-      }
-    }
+  "rota_b_intro": {
+    "dialogo": [
+        {"personagem": "Narrador", "fala": "Com um mandado judicial, sua equipe quebra a criptografia do MAMI. Vocês obtêm acesso irrestrito a todas as comunicações, de todos os usuários. A operação contra o Nuevo Camino pode começar."}
+    ],
+    "escolhas": {"continuar": {"texto": "Iniciar a análise dos dados expostos", "proximo": "final_b"}}
   },
-  "rota_social": {
-    "texto": "Você propõe uma infiltração na rede através de engenharia social e criação de uma identidade digital falsa.",
-    "escolhas": {
-      "a": {
-        "texto": "Criar persona e iniciar infiltração", 
-        "proximo": "final"
-      }
-    }
+  "rota_c_intro": {
+    "dialogo": [
+        {"personagem": "César (Pensamento)", "fala": "É um risco enorme, mas é o único jeito de preservar o MAMI. Vou passar as próximas semanas criando uma persona digital para me infiltrar nos círculos do Nuevo Camino e obter as informações de dentro."}
+    ],
+    "escolhas": {"continuar": {"texto": "Aguardar os resultados da infiltração", "proximo": "final_c"}}
   },
-  "final": {
-    "texto": "Aqui está o resumo das suas escolhas e o impacto delas:",
+  "verificar_final_secreto": {
+    "dialogo": [{"personagem": "Sistema", "fala": "Verificando integridade da colaboração..."}],
+    "condicional": {"campo": "caminho_secreto", "valor": 2, "proximo_sucesso": "final_d", "proximo_falha": "final_a"},
+    "escolhas": {}
+  },
+  "final_a": {
+    "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA ÉTICA. O sistema de filtros funciona. Vocês coletam evidências suficientes para desmantelar a liderança do Nuevo Camino. As comunidades indígenas mantêm sua ferramenta de comunicação segura e a confiança nas autoridades é fortalecida."}],
+    "escolhas": {}
+  },
+  "final_b": {
+    "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA CUSTOSA. O acesso total aos dados permite neutralizar completamente o Nuevo Camino. No entanto, a notícia da quebra de criptografia vaza. Ativistas abandonam o MAMI, perdendo um canal vital de proteção. A desconfiança na tecnologia e nas autoridades aumenta drasticamente."}],
+    "escolhas": {}
+  },
+  "final_c": {
+    "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: FRACASSO ÉTICO. A infiltração é lenta demais. O Nuevo Camino, sentindo a pressão, muda seus métodos de comunicação antes que você consiga provas concretas. Eles continuam operando. Os direitos digitais foram preservados, mas a justiça não foi alcançada."}],
+    "escolhas": {}
+  },
+  "final_d": {
+    "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: SOLUÇÃO INOVADORA. Sua colaboração com Iberê rende mais do que o esperado. Ao entenderem a fundo as necessidades das comunidades, vocês criam um sistema de denúncia anônima dentro do MAMI. As próprias comunidades, agora empoderadas, ajudam a expor o Nuevo Camino de forma segura. A operação é um sucesso e vocês criam um novo paradigma de cooperação."}],
     "escolhas": {}
   }
 }
