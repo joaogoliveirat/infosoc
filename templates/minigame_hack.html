@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dilema Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .hack-terminal {
+            background-color: #0d0d0d;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            border: 2px solid #0ff;
+            margin-top: 20px;
+        }
+
+        .codigo {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 5px 10px;
+            background-color: #111;
+            border: 1px solid #0ff;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            background-color: black;
+            color: #00ff00;
+            border: 2px solid #0ff;
+            font-family: 'Courier New', monospace;
+        }
+
+        button {
+            background-color: black;
+            color: #0ff;
+            border: 1px solid #0ff;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Dilema Digital</h2>
+        <div class="hack-terminal">
+            <p>Palavras disponíveis:</p>
+            {% for palavra in palavras %}
+                <span class="codigo">{{ palavra }}</span>
+            {% endfor %}
+            <form method="POST">
+                <input type="text" name="palpite" required placeholder="Digite a senha...">
+                <button type="submit">Enviar</button>
+            </form>
+
+            {% if feedback is defined %}
+                <p>Seu palpite: <strong>{{ ultimo_palpite }}</strong></p>
+                <p>Letras corretas na posição certa: {{ feedback }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

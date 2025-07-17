@@ -108,6 +108,39 @@ def cena(cena_id):
                 print(f"Erro ao ler o arquivo: {e}")
 
             return render_template("cena_txt.html", cena=cena_atual, cena_id=cena_id, conteudo_arquivo=conteudo_do_arquivo)
+    # Lógica do minigame de hacking
+    if cena_atual.get("tipo") == "minigame":
+        palavras = cena_atual["palavras"]
+        senha_correta = cena_atual["senha_correta"]
+        
+
+        if request.method == 'POST':
+            palpite = request.form["palpite"].upper()
+            
+
+            if palpite == senha_correta:
+                resp = redirect(url_for('cena', cena_id=cena_atual["escolhas"]["sucesso"]["proximo"]))
+                
+                return resp
+            else:
+                # Calcula feedback: quantas letras na posição correta
+                feedback = sum([1 for a, b in zip(palpite, senha_correta) if a == b])
+            
+                
+
+                return render_template(
+                    "minigame_hack.html", 
+                    cena=cena_atual, 
+                    palavras=palavras, 
+                    feedback=feedback, 
+                    ultimo_palpite=palpite
+                )
+
+        return render_template(
+            "minigame_hack.html", 
+            cena=cena_atual, 
+            palavras=palavras, 
+        )
 
     if "condicional" in cena_atual:
         cond = cena_atual["condicional"]

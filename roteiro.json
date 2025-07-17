@@ -107,9 +107,20 @@
       {"personagem": "Narrador", "fala": "Você encontra padrões nas mensagens e descobre o app MAMI, um mensageiro criptografado usado por indígenas e criminosos.", "imagem": ""}
     ],
     "escolhas": {
-      "continuar": {"texto": "Investigar o criador do MAMI", "proximo": "cena_3_1"}
+      "continuar": {"texto": "Investigar o criador do MAMI", "proximo": "minigame_hacking"}
     }
   },
+  "minigame_hacking": {
+  "tipo": "minigame",
+  "titulo": "Hacking - Acesso ao MAMI",
+  "palavras": ["AKSANML", "ACAVLPS", "AIFARGOTPIRC", "ORETCAZ", "DNARGLEF"],
+  "senha_correta": "CRIPTOGRAFIA",
+  "escolhas": {
+    "sucesso": {"texto": "Você obteve acesso ao sistema.", "proximo": "cena_3_1"},
+    "falha": {"texto": "O acesso foi negado após múltiplas tentativas.", "proximo": "final_c"}
+  }
+},
+
   "cena_3_1": {
     "dialogo": [
       {"personagem": "Narrador", "fala": "CAPÍTULO 3 - O DESENVOLVEDOR. Você localiza Iberê Silva, o criador do MAMI."},
