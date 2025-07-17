@@ -76,9 +76,9 @@
     }
   },
   "cena_2_file2": {
-    "dialogo": [
-      {"personagem": "Narrador", "fala": "Você acessa o arquivo Interceptacoes_Comunicacao.txt.", "imagem": ""}
-    ], 
+    "tipo": "txt",
+    "titulo": "Ánalise de Arquivos: Fragmentos de Comunicações Interceptadas",
+    "arquivo_txt": "Interceptacoes_Comunicacao.txt",
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
       "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
@@ -94,9 +94,9 @@
     }
   },
     "cena_2_file4": {
-    "dialogo": [
-      {"personagem": "Narrador", "fala": "Você acessa o arquivo Relatorio_Comunidades.pdf.", "imagem": ""}
-    ], 
+    "tipo": "pdf",
+    "titulo": "Análise de Arquivos: Relatório da Comunidade",
+    "arquivo_pdf": "Relatorio_Comunidades.pdf",
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
       "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}

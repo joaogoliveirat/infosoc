@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 import json
 
@@ -88,6 +89,25 @@ def cena(cena_id):
             return redirect(url_for('cena', cena_id=proxima_cena))
         
         return render_template("cena_pdf.html", cena=cena_atual, cena_id=cena_id)
+    
+    elif cena_atual.get("tipo") == "txt":
+            if request.method == 'POST':
+                escolha = request.form['escolha']
+                dados_escolha = cena_atual["escolhas"][escolha]
+                proxima_cena = dados_escolha["proximo"]
+                return redirect(url_for('cena', cena_id=proxima_cena))
+            
+            # Lógica para ler o arquivo de texto
+            conteudo_do_arquivo = "Erro: Arquivo não encontrado."
+            try:
+                # Constrói o caminho completo para o arquivo
+                caminho_arquivo = os.path.join(app.static_folder, 'textfiles', cena_atual['arquivo_txt'])
+                with open(caminho_arquivo, 'r', encoding='utf-8') as f:
+                    conteudo_do_arquivo = f.read()
+            except Exception as e:
+                print(f"Erro ao ler o arquivo: {e}")
+
+            return render_template("cena_txt.html", cena=cena_atual, cena_id=cena_id, conteudo_arquivo=conteudo_do_arquivo)
 
     if "condicional" in cena_atual:
         cond = cena_atual["condicional"]

@@ -1,0 +1,24 @@
+-- INÍCIO DO REGISTRO DE DADOS --
+-- ARQUIVO: intercept_log_77B.txt --
+-- FONTE: Rede não segura --
+
+--- FRAGMENTO 1 ---
+
+[2023-04-16 22:10:45] Usuário<alpha_7>: A transação foi confirmada. O de sempre.
+[2023-04-16 22:11:02] Usuário<zeta_3>: Entendido. Mas essa plataforma está ficando visada. Temos que mudar.
+[2023-04-16 22:11:30] Usuário<alpha_7>: Já te falei. Instala o MAMI. É p2p e independente. Ninguém grampeia.
+[2023-04-16 22:12:01] Usuário<zeta_3>: Não achei na app store.
+[2023-04-16 22:12:15] Usuário<alpha_7>: Óbvio.Tem que baixar o apk. Pega o link no nosso repositório.
+
+--- FRAGMENTO 2 ---
+
+[2023-04-17 08:40:12] Usuário<sol_invictus>: O contato com a comunidade falhou. O líder deles não confia na gente.
+[2023-04-17 08:40:55] Usuário<sombra_xyz>: Ele usa o mesmo app que os ativistas... aquele M.A.M.I. Impossível de interceptar.
+[2023-04-17 08:41:21] Usuário<sol_invictus>: Então vamos pressionar de outro jeito. Começa a fase 2 da campanha de desinformação.
+
+--- FRAGMENTO 3 ---
+
+[2023-04-17 11:05:33] Usuário<zeta_3>: Ok, instalei. Me adiciona lá. Meu ID é o mesmo.
+[2023-04-17 11:05:58] Usuário<alpha_7>: Bem vindo a segurança de verdade. Apaga as conversas desse app, nossa conversa aqui nunca existiu.
+
+-- FIM DO REGISTRO --

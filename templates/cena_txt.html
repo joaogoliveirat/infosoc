@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dilema Digital - Análise de Texto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .text-viewer-container {
+            width: 100%;
+            height: 70vh;
+            background-color: #0d0d1a; /* Fundo de terminal escuro */
+            border: 2px solid #0ff;
+            color: #00ff41; /* Cor do texto verde, estilo terminal */
+            font-family: 'Courier New', monospace; /* Fonte monoespaçada */
+            padding: 20px;
+            overflow-y: auto; /* Adiciona barra de rolagem se o texto for longo */
+            white-space: pre-wrap; /* Preserva espaços e quebras de linha */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ cena.titulo }}</h2>
+
+        <div class="text-viewer-container">
+            <pre>{{ conteudo_arquivo }}</pre>
+        </div>
+
+        <form method="POST" action="{{ url_for('cena', cena_id=cena_id) }}">
+            {% for key, val in cena.escolhas.items() %}
+                <button type="submit" name="escolha" value="{{ key }}">{{ val.texto }}</button>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>
