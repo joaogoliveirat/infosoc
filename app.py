@@ -72,7 +72,7 @@ def avaliar_impacto():
 @app.route('/')
 def index():
     reiniciar_jogo()
-    return redirect(url_for('cena', cena_id="prologo"))
+    return redirect(url_for('cena', cena_id="menu"))
 
 @app.route('/cena/<cena_id>', methods=['GET', 'POST'])
 def cena(cena_id):
@@ -182,7 +182,11 @@ def cena(cena_id):
         })
 
         proxima_cena = dados_escolha["proximo"]
-        return redirect(url_for('cena', cena_id=proxima_cena))
+
+        if proxima_cena == "index":
+            return redirect(url_for('index'))
+        else:
+            return redirect(url_for('cena', cena_id=proxima_cena))
     
     impacto_atual = {
         "direitos_digitais": estado_jogador["direitos_digitais"],

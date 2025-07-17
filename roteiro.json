@@ -1,4 +1,21 @@
 {
+  "menu": {
+    "escolhas": {
+      "a": {"texto": "Jogar", "proximo": "prologo"},
+      "b": {"texto": "Sobre", "proximo": "sobre"}
+    }
+  },
+  "sobre": {
+    "dialogo": [
+      {"personagem": "César", "fala": "Olá, eu sou César, personagem principal desse jogo.", "imagem": "cesar.png"},
+      {"personagem": "César", "fala": "Esse jogo é um projeto densenvolvido para a matéria de Informática e Sociedade na Universidade de Brasília ministrada pela professora doutoura Letícia Lopes Leite. O intuito desse projeto é fazer um jogo que aborde de forma lúdica o tema da ética na computação e hacking.", "imagem": "cesar.png"},
+      {"personagem": "César", "fala": "Os integrantes desse grupo são: Arthur Diehl Barroso 221029991, Hiago Sousa Rocha 221002049 e João Gilberto de Oliveira Teixeira 211036070.", "imagem": "cesar.png"}
+    ],
+    "escolhas": {
+      "a": {"texto": "Jogar", "proximo": "prologo"},
+      "b": {"texto": "Voltar para o Menu Principal", "proximo": "menu"}
+    }
+  },
   "prologo": {
     "dialogo": [
       {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:", "imagem": ""}
@@ -62,8 +79,8 @@
     "escolhas": {
       "a": {"texto": "Ler 'Nuevo_Camino_Perfil.pdf'", "proximo": "cena_2_file1"},
       "b": {"texto": "Ver 'Interceptacoes_Comunicacao.txt'", "proximo": "cena_2_file2"},
-      "c": {"texto": "Abrir 'Analise_Financeira.xlsx'", "proximo": "cena_2_file3"},
-      "d": {"texto": "Ler 'Relatorio_Comunidades.pdf'", "proximo": "cena_2_file4"}
+      "c": {"texto": "Abrir 'Relatorio_Comunidades.pdf'", "proximo": "cena_2_file3"},
+      "d": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
   "cena_2_file1": {
@@ -84,16 +101,7 @@
       "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
-  "cena_2_file3": {
-    "dialogo": [
-      {"personagem": "Narrador", "fala": "Você acessa o arquivo Analise_Financeira.xlsx.", "imagem": ""}
-    ], 
-    "escolhas": {
-      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
-      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
-    }
-  },
-    "cena_2_file4": {
+    "cena_2_file3": {
     "tipo": "pdf",
     "titulo": "Análise de Arquivos: Relatório da Comunidade",
     "arquivo_pdf": "Relatorio_Comunidades.pdf",
@@ -188,18 +196,18 @@
   },
   "final_a": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA ÉTICA. O sistema de filtros funciona. Vocês coletam evidências suficientes para desmantelar a liderança do Nuevo Camino. As comunidades indígenas mantêm sua ferramenta de comunicação segura e a confiança nas autoridades é fortalecida."}],
-    "escolhas": {}
+    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
   },
   "final_b": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA CUSTOSA. O acesso total aos dados permite neutralizar completamente o Nuevo Camino. No entanto, a notícia da quebra de criptografia vaza. Ativistas abandonam o MAMI, perdendo um canal vital de proteção. A desconfiança na tecnologia e nas autoridades aumenta drasticamente."}],
-    "escolhas": {}
+    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
   },
   "final_c": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: FRACASSO ÉTICO. A infiltração é lenta demais. O Nuevo Camino, sentindo a pressão, muda seus métodos de comunicação antes que você consiga provas concretas. Eles continuam operando. Os direitos digitais foram preservados, mas a justiça não foi alcançada."}],
-    "escolhas": {}
+    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
   },
   "final_d": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: SOLUÇÃO INOVADORA. Sua colaboração com Iberê rende mais do que o esperado. Ao entenderem a fundo as necessidades das comunidades, vocês criam um sistema de denúncia anônima dentro do MAMI. As próprias comunidades, agora empoderadas, ajudam a expor o Nuevo Camino de forma segura. A operação é um sucesso e vocês criam um novo paradigma de cooperação."}],
-    "escolhas": {}
+    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
   }
 }
