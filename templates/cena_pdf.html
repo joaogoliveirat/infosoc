@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dilema Digital - Análise de Documento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .pdf-viewer-container {
+            width: 100%;
+            height: 70vh; /* 70% da altura da tela */
+            border: 2px solid #0ff;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .pdf-viewer-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ cena.titulo }}</h2>
+
+        <div class="pdf-viewer-container">
+            <iframe src="{{ url_for('static', filename='pdfs/' + cena.arquivo_pdf) }}">
+                <p>Seu navegador não suporta a visualização de PDFs. Por favor, faça o download <a href="{{ url_for('static', filename='pdfs/' + cena.arquivo_pdf) }}">aqui</a>.</p>
+            </iframe>
+        </div>
+
+        <form method="POST" action="{{ url_for('cena', cena_id=cena_id) }}">
+            {% for key, val in cena.escolhas.items() %}
+                <button type="submit" name="escolha" value="{{ key }}">{{ val.texto }}</button>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>

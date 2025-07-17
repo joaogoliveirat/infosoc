@@ -80,6 +80,15 @@ def cena(cena_id):
 
     cena_atual = roteiro[cena_id]
 
+    if cena_atual.get("tipo") == "pdf":
+        if request.method == 'POST':
+            escolha = request.form['escolha']
+            dados_escolha = cena_atual["escolhas"][escolha]
+            proxima_cena = dados_escolha["proximo"]
+            return redirect(url_for('cena', cena_id=proxima_cena))
+        
+        return render_template("cena_pdf.html", cena=cena_atual, cena_id=cena_id)
+
     if "condicional" in cena_atual:
         cond = cena_atual["condicional"]
         if estado_jogador.get(cond["campo"]) == cond["valor"]:

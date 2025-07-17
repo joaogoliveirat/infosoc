@@ -67,12 +67,12 @@
     }
   },
   "cena_2_file1": {
-    "dialogo": [
-      {"personagem": "Narrador", "fala": "Você acessa o arquivo Nuevo_Camino_Perfil.pdf.", "imagem": ""}
-    ], 
+    "tipo": "pdf",
+    "titulo": "Análise de Arquivos: Relatório Nuevo Camino",
+    "arquivo_pdf": "Relatorio_Nuevo_Camino.pdf",
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
-      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
   "cena_2_file2": {
@@ -81,7 +81,7 @@
     ], 
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
-      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
   "cena_2_file3": {
@@ -90,7 +90,7 @@
     ], 
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
-      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
     "cena_2_file4": {
@@ -99,7 +99,7 @@
     ], 
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
-      "b": {"texto": "Seguir em frente.", "proximo": "cena_2_2"}
+      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
   "cena_2_2": {
