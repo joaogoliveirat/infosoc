@@ -4,15 +4,15 @@
       {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:", "imagem": ""}
     ],
     "escolhas": {
-      "pragmatico": {"texto": "Pragmático...", "proximo": "cena_1_1"},
-      "idealista": {"texto": "Idealista...", "proximo": "cena_1_1"},
-      "equilibrado": {"texto": "Equilibrado...", "proximo": "cena_1_1"}
+      "pragmatico": {"texto": "**Pragmático:** Foca em resultados, menos preocupado com métodos", "proximo": "cena_1_1"},
+      "idealista": {"texto": "**Idealista:** Prioriza princípios éticos e direitos digitais", "proximo": "cena_1_1"},
+      "equilibrado": {"texto": "**Equilibrado:** Tenta balancear eficácia e ética", "proximo": "cena_1_1"}
     }
   },
   "cena_1_1": {
     "dialogo": [
-      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'.", "imagem": "maya.png"},
-      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos...", "imagem": "samuel.png"}
+      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'. Samuel, explique a situação.", "imagem": "maya.png"},
+      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos, intimidam comunidades indígenas online e usam criptomoedas para lavagem de dinheiro.", "imagem": "samuel.png"}
     ],
     "escolhas": {
       "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cena_1_2"},
@@ -22,7 +22,7 @@
   },
   "cena_1_2": {
     "dialogo": [
-      {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. A qualquer custo.", "imagem": "samuel.png"},
+      {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. Precisamos parar essas atividades a qualquer custo.", "imagem": "samuel.png"},
       {"personagem": "Maya Santos", "fala": "César, você liderará essa operação. Como responde?", "imagem": "maya.png"}
     ],
     "escolhas": {
@@ -117,7 +117,7 @@
       {"personagem": "Iberê Silva", "fala": "O MAMI foi criado para proteger da vigilância, não para criar novas portas para ela. Não posso criar uma fraqueza no sistema.", "imagem": "ibere.png"}
     ],
     "escolhas": {
-      "a": {"texto": "'É uma questão de segurança nacional.'", "proximo": "cena_3_2_dilema",
+      "a": {"texto": "É uma questão de segurança nacional.", "proximo": "cena_3_2_dilema",
         "etica": -1,
         "impacto": {
           "seguranca_publica": 2,
@@ -125,18 +125,26 @@
           "confianca_comunitaria": -1
         }
       },
-      "b": {"texto": "'Podemos trabalhar juntos numa solução ética.'", "proximo": "cena_3_2_dilema",
+      "b": {"texto": "Podemos trabalhar juntos numa solução ética.", "proximo": "cena_3_2_dilema",
         "etica": 1,
         "impacto": {
           "direitos_digitais": 2,
           "confianca_comunitaria": 2
+        }
+      },
+      "c": {"texto": "Vou conseguir acesso com ou sem sua ajuda.", "proximo": "cena_3_2_dilema",
+        "etica": -1,
+        "impacto": {
+          "seguranca_publica": 1,
+          "direitos_digitais": -2,
+          "confianca_comunitaria": -2
         }
       }
     }
   },
   "cena_3_2_dilema": {
     "dialogo": [
-      {"personagem": "Iberê Silva", "fala": "Você não entende. Se eu ceder um backdoor, não estarei traindo apenas criminosos. Estarei expondo ativistas e comunidades indígenas que usam o MAMI para documentar violações de direitos. A vulnerabilidade afetaria a todos.", "imagem": "ibere.png"}
+      {"personagem": "Iberê Silva", "fala": "Vocês não entendem. Se eu ceder backdoors, não estarei traindo apenas criminosos. Comunidades indígenas usam o MAMI para documentar violações de direitos territoriais e coordenar proteção legal.", "imagem": "ibere.png"}
     ],
     "escolhas": {
       "a": {"texto": "Colaborar com Iberê para criar filtros éticos.", "proximo": "rota_a_intro", "impacto": {"direitos_digitais": 2, "seguranca_publica": 1, "confianca_comunitaria": 2}, "set_estado": {"caminho_secreto": 2}},
@@ -152,7 +160,7 @@
   },
   "rota_b_intro": {
     "dialogo": [
-        {"personagem": "Narrador", "fala": "Com um mandado judicial, sua equipe quebra a criptografia do MAMI. Vocês obtêm acesso irrestrito a todas as comunicações, de todos os usuários. A operação contra o Nuevo Camino pode começar.", "imagem": ""}
+        {"personagem": "Samuel Torres", "fala": "Conseguimos um mandado para quebrar toda a criptografia. Vamos fazer isso com ou sem o desenvolvedor.", "imagem": "samuel.png"}
     ],
     "escolhas": {"continuar": {"texto": "Iniciar a análise dos dados expostos", "proximo": "final_b"}}
   },
