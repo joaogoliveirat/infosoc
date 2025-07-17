@@ -1,42 +1,92 @@
 {
-  "menu": {
-    "escolhas": {
-      "a": {"texto": "Jogar", "proximo": "prologo"},
-      "b": {"texto": "Sobre", "proximo": "sobre"}
-    }
-  },
-  "sobre": {
-    "dialogo": [
-      {"personagem": "César", "fala": "Olá, eu sou César, personagem principal desse jogo.", "imagem": "cesar.png"},
-      {"personagem": "César", "fala": "Esse jogo é um projeto densenvolvido para a matéria de Informática e Sociedade na Universidade de Brasília ministrada pela professora doutoura Letícia Lopes Leite. O intuito desse projeto é fazer um jogo que aborde de forma lúdica o tema da ética na computação e hacking.", "imagem": "cesar.png"},
-      {"personagem": "César", "fala": "Os integrantes desse grupo são: Arthur Diehl Barroso 221029991, Hiago Sousa Rocha 221002049 e João Gilberto de Oliveira Teixeira 211036070.", "imagem": "cesar.png"}
-    ],
-    "escolhas": {
-      "a": {"texto": "Jogar", "proximo": "prologo"},
-      "b": {"texto": "Voltar para o Menu Principal", "proximo": "menu"}
-    }
-  },
   "prologo": {
     "dialogo": [
       {"personagem": "Narrador", "fala": "Você é César, analista de cibersegurança do DCCC (Departamento de Combate a Crimes Cibernéticos). Escolha seu perfil ético inicial:", "imagem": ""}
     ],
     "escolhas": {
-      "pragmatico": {"texto": "**Pragmático:** Foca em resultados, menos preocupado com métodos", "proximo": "cena_1_1"},
-      "idealista": {"texto": "**Idealista:** Prioriza princípios éticos e direitos digitais", "proximo": "cena_1_1"},
-      "equilibrado": {"texto": "**Equilibrado:** Tenta balancear eficácia e ética", "proximo": "cena_1_1"}
+      "pragmatico": {"texto": "**Pragmático:** Foca em resultados, menos preocupado com métodos", "proximo": "cena_1_1_pragmatico"},
+      "idealista": {"texto": "**Idealista:** Prioriza princípios éticos e direitos digitais", "proximo": "cena_1_1_idealista"},
+      "equilibrado": {"texto": "**Equilibrado:** Tenta balancear eficácia e ética", "proximo": "cena_1_1_equilibrado"}
     }
   },
-  "cena_1_1": {
-    "dialogo": [
-      {"personagem": "Maya Santos", "fala": "Bom dia, César. A Polícia Federal precisa de nossa ajuda técnica no caso 'Nuevo Camino'. Samuel, explique a situação.", "imagem": "maya.png"},
-      {"personagem": "Samuel Torres", "fala": "O Nuevo Camino evoluiu. Não são mais apenas traficantes - agora coordenam crimes cibernéticos, intimidam comunidades indígenas online e usam criptomoedas para lavagem de dinheiro.", "imagem": "samuel.png"}
-    ],
-    "escolhas": {
-      "a": {"texto": "Qual é exatamente nossa jurisdição aqui?", "proximo": "cena_1_2"},
-      "b": {"texto": "Que tipo de apoio técnico vocês precisam?", "proximo": "cena_1_2"},
-      "c": {"texto": "Temos evidências suficientes para uma investigação?", "proximo": "cena_1_2"}
-    }
-  },
+"cena_1_1_pragmatico": {
+  "dialogo": [
+    {"personagem": "Samuel Torres", "fala": "César, bom que veio. O caso 'Nuevo Camino' exige ação direta. Estamos com uma chance de derrubar o núcleo cibernético deles.", "imagem": "samuel.png"},
+    {"personagem": "Maya Santos", "fala": "Sabemos que você não gosta de rodeios, então vamos direto ao ponto. Você lidera.", "imagem": "maya.png"}
+  ],
+  "escolhas": {
+    "a": {"texto": "Quais alvos temos?", "proximo": "cena_1_2", "etica": -1,
+        "impacto": {
+          "direitos_digitais": -1,
+          "confianca_comunitaria": -1,
+          "seguranca_publica": 1
+        }},
+    "b": {"texto": "O que podemos comprometer?", "proximo": "cena_1_2", "etica": -1,
+        "impacto": {
+          "direitos_digitais": -1,
+          "confianca_comunitaria": -1,
+          "seguranca_publica": 1
+        } },
+    "c": {"texto": "Quanto tempo temos para agir?", "proximo": "cena_1_2", "etica": -1},
+        "impacto": {
+          "direitos_digitais": -1,
+          "confianca_comunitaria": -1,
+          "seguranca_publica": 1
+        }
+  }
+ },
+ "cena_1_1_idealista": {
+  "dialogo": [
+    {"personagem": "Maya Santos", "fala": "César, o caso Nuevo Camino vai exigir firmeza... e sensibilidade.", "imagem": "maya.png"},
+    {"personagem": "Samuel Torres", "fala": "Eles estão atacando comunidades indígenas e usando criptografia pra se esconder. Precisamos agir — mas sabemos que você vai querer garantir que os direitos não sejam atropelados.", "imagem": "samuel.png"}
+  ],
+  "escolhas": {
+    "a": {"texto": "Há risco de violarmos a privacidade de inocentes?", "proximo": "cena_1_2", "etica": 1,
+        "impacto": {
+          "direitos_digitais": 1,
+          "confianca_comunitaria": 1,
+          "seguranca_publica": -1
+        }},
+    "b": {"texto": "Qual o impacto disso para as comunidades?", "proximo": "cena_1_2", "etica": 1,
+        "impacto": {
+          "direitos_digitais": 1,
+          "confianca_comunitaria": 1,
+          "seguranca_publica": -1
+        }},
+    "c": {"texto": "Estamos em conformidade legal?", "proximo": "cena_1_2", "etica": 1,
+        "impacto": {
+          "direitos_digitais": 1,
+          "confianca_comunitaria": 1,
+          "seguranca_publica": -1
+        }}
+  }
+},
+"cena_1_1_equilibrado": {
+  "dialogo": [
+    {"personagem": "Maya Santos", "fala": "César, você é o equilíbrio que esse caso precisa. Precisamos interromper os ataques sem perder a confiança pública.", "imagem": "maya.png"},
+    {"personagem": "Samuel Torres", "fala": "O grupo Nuevo Camino está mais sofisticado do que nunca. E você vai nos ajudar a entrar nos sistemas deles sem provocar um escândalo." , "imagem": "samuel.png" }
+  ],
+  "escolhas": {
+    "a": {"texto": "Qual a estratégia para manter a legalidade?", "proximo": "cena_1_2",
+        "impacto": {
+          "direitos_digitais": 1,
+          "confianca_comunitaria": 0,
+          "seguranca_publica": 1
+        }},
+    "b": {"texto": "Quem são os principais alvos?", "proximo": "cena_1_2",
+        "impacto": {
+          "direitos_digitais": 0,
+          "confianca_comunitaria": 1,
+          "seguranca_publica": 1
+        }},
+    "c": {"texto": "Qual apoio teremos para evitar prejuízos sociais?", "proximo": "cena_1_2",
+        "impacto": {
+          "direitos_digitais": 1,
+          "confianca_comunitaria": 1,
+          "seguranca_publica": -1
+        }}
+  }
+},
   "cena_1_2": {
     "dialogo": [
       {"personagem": "Samuel Torres", "fala": "Quero que o DCCC invada os sistemas deles. Precisamos parar essas atividades a qualquer custo.", "imagem": "samuel.png"},
@@ -79,8 +129,8 @@
     "escolhas": {
       "a": {"texto": "Ler 'Nuevo_Camino_Perfil.pdf'", "proximo": "cena_2_file1"},
       "b": {"texto": "Ver 'Interceptacoes_Comunicacao.txt'", "proximo": "cena_2_file2"},
-      "c": {"texto": "Abrir 'Relatorio_Comunidades.pdf'", "proximo": "cena_2_file3"},
-      "d": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
+      "c": {"texto": "Abrir 'Analise_Financeira.xlsx'", "proximo": "cena_2_file3"},
+      "d": {"texto": "Ler 'Relatorio_Comunidades.pdf'", "proximo": "cena_2_file4"}
     }
   },
   "cena_2_file1": {
@@ -101,7 +151,16 @@
       "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
     }
   },
-    "cena_2_file3": {
+  "cena_2_file3": {
+    "dialogo": [
+      {"personagem": "Narrador", "fala": "Você acessa o arquivo Analise_Financeira.xlsx.", "imagem": ""}
+    ], 
+    "escolhas": {
+      "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
+      "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
+    }
+  },
+    "cena_2_file4": {
     "tipo": "pdf",
     "titulo": "Análise de Arquivos: Relatório da Comunidade",
     "arquivo_pdf": "Relatorio_Comunidades.pdf",
@@ -196,18 +255,18 @@
   },
   "final_a": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA ÉTICA. O sistema de filtros funciona. Vocês coletam evidências suficientes para desmantelar a liderança do Nuevo Camino. As comunidades indígenas mantêm sua ferramenta de comunicação segura e a confiança nas autoridades é fortalecida."}],
-    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
+    "escolhas": {}
   },
   "final_b": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: VITÓRIA CUSTOSA. O acesso total aos dados permite neutralizar completamente o Nuevo Camino. No entanto, a notícia da quebra de criptografia vaza. Ativistas abandonam o MAMI, perdendo um canal vital de proteção. A desconfiança na tecnologia e nas autoridades aumenta drasticamente."}],
-    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
+    "escolhas": {}
   },
   "final_c": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: FRACASSO ÉTICO. A infiltração é lenta demais. O Nuevo Camino, sentindo a pressão, muda seus métodos de comunicação antes que você consiga provas concretas. Eles continuam operando. Os direitos digitais foram preservados, mas a justiça não foi alcançada."}],
-    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
+    "escolhas": {}
   },
   "final_d": {
     "dialogo": [{"personagem": "Sistema", "fala": "RESULTADO: SOLUÇÃO INOVADORA. Sua colaboração com Iberê rende mais do que o esperado. Ao entenderem a fundo as necessidades das comunidades, vocês criam um sistema de denúncia anônima dentro do MAMI. As próprias comunidades, agora empoderadas, ajudam a expor o Nuevo Camino de forma segura. A operação é um sucesso e vocês criam um novo paradigma de cooperação."}],
-    "escolhas": {"continuar": {"texto": "Voltar para o Menu Principal", "proximo": "index"}}
+    "escolhas": {}
   }
 }
