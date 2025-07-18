@@ -44,12 +44,12 @@
           "confianca_comunitaria": -1,
           "seguranca_publica": 1
         } },
-    "c": {"texto": "Quanto tempo temos para agir?", "proximo": "cena_1_2", "etica": -1},
+    "c": {"texto": "Quanto tempo temos para agir?", "proximo": "cena_1_2", "etica": -1,
         "impacto": {
           "direitos_digitais": -1,
           "confianca_comunitaria": -1,
           "seguranca_publica": 1
-        }
+        }}
   }
  },
  "cena_1_1_idealista": {
@@ -169,9 +169,9 @@
     }
   },
   "cena_2_file3": {
-    "dialogo": [
-      {"personagem": "Narrador", "fala": "Você acessa o arquivo Analise_Financeira.xlsx.", "imagem": ""}
-    ], 
+    "tipo": "pdf",
+    "titulo": "Análise de Arquivos: Relatório da Comunidade",
+    "arquivo_pdf": "Relatorio_Comunidades.pdf",
     "escolhas": {
       "a": {"texto": "Acessar outros arquivos.", "proximo": "cena_2_1"},
       "b": {"texto": "Concluir análise e prosseguir.", "proximo": "cena_2_2"}
